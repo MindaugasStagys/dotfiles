@@ -24,7 +24,6 @@ Plugin 'ojroques/vim-oscyank', {'branch': 'main'}
 Plugin 'dense-analysis/ale'
 
 " Colorschemes
-Plugin 'sainnhe/sonokai'
 Plugin 'catppuccin/vim'
 
 " Vim status line
@@ -93,11 +92,8 @@ let g:AutoPairsShortcutToggle = '<C-P>'
 if has('termguicolors')
 set termguicolors
 endif
-"let g:sonokai_style = 'default'
-"let g:sonokai_better_performance = 1
-"colorscheme sonokai
 
-colorscheme catppuccin
+colorscheme catppuccin_mocha
 
 " ------------------------------------------------------------
 " Airline configuration
@@ -105,7 +101,6 @@ colorscheme catppuccin
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline_theme = 'sonokai'
 let g:airline_theme = 'deus'
 
 " ------------------------------------------------------------
@@ -172,8 +167,10 @@ let g:repl_position = 3
 " Nvim-R configuration 
 " ------------------------------------------------------------
 
-let R_rconsole_width = 0
-let R_rconsole_height = 15
+let R_rconsole_width = winwidth(0) / 2
+autocmd VimResized * let R_rconsole_width = winwidth(0) / 2
+let R_assign = 0
+let R_source = '~/.vim/plugged/Nvim-R/R/tmux_split.vim'
 
 " ------------------------------------------------------------
 " better-escape configuration 
@@ -185,7 +182,7 @@ function! JKescape(key)
 	if a:key=='j' | let g:esc_j_lasttime = reltimefloat(reltime()) | endif
 	if a:key=='k' | let g:esc_k_lasttime = reltimefloat(reltime()) | endif
 	let l:timediff = abs(g:esc_j_lasttime - g:esc_k_lasttime)
-	return (l:timediff <= 0.05 && l:timediff >=0.001) ? "\b\e" : a:key
+	return (l:timediff <= 0.2 && l:timediff >=0.001) ? "\b\e" : a:key
 endfunction
 
 " ------------------------------------------------------------
@@ -219,12 +216,13 @@ let g:livepreview_previewer = 'open -a Skim'
 " Vim configuration
 " ------------------------------------------------------------
 
+set hidden              " move between buffers without saving modifications
 set nu                  " Enable line numbers
 syntax on               " Enable synax highlighting
 set incsearch           " Enable incremental search
 set hlsearch            " Enable highlight search
 set splitbelow          " Always split below
-set splitright          " Always split right"
+set splitright          " Always split right
 set mouse=a             " Enable mouse drag on window splits
 set tabstop=4           " How many columns of whitespace a \t is worth
 set shiftwidth=4        " How many columns of whitespace a level of indentation is worth
