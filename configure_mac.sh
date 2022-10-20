@@ -19,6 +19,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 brew install tree
 brew install tmux
+brew install ack
 brew install --cask kitty
 
 brew install koekeishiya/formulae/yabai

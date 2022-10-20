@@ -256,14 +256,14 @@ nnoremap     <leader>h  :REPLHide<CR>
 nmap         <C-t>      :TagbarToggle<CR>
 
 " ctrlds
-nmap         <C-F>f     <Plug>CtrlSFPrompt
-xmap         <C-F>f     <Plug>CtrlSFVwordPath
-xmap         <C-F>F     <Plug>CtrlSFVwordExec
-nmap         <C-F>n     <Plug>CtrlSFCwordPath
-nmap         <C-F>p     <Plug>CtrlSFPwordPath
-nnoremap     <C-F>o     :CtrlSFOpen<CR>
-nnoremap     <C-F>t     :CtrlSFToggle<CR>
-inoremap     <C-F>t     <Esc>:CtrlSFToggle<CR>
+nmap         <C-f>f     <Plug>CtrlSFPrompt
+xmap         <C-f>f     <Plug>CtrlSFVwordPath
+xmap         <C-f>F     <Plug>CtrlSFVwordExec
+nmap         <C-f>n     <Plug>CtrlSFCwordPath
+nmap         <C-f>p     <Plug>CtrlSFPwordPath
+nnoremap     <C-f>o     :CtrlSFOpen<CR>
+nnoremap     <C-f>t     :CtrlSFToggle<CR>
+inoremap     <C-f>t     <Esc>:CtrlSFToggle<CR>
 
 " fswitch
 nmap         <C-Z>      :vsplit <bar> :wincmd l <bar> :FSRight<CR>
