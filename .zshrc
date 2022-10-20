@@ -9,9 +9,9 @@ HIST_STAMPS="yyyy/mm/dd"
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-alias tree="$HOME/tree/usr/bin/tree"
+
 alias icat="kitty +kitten icat"
-alias lc='colorls --sd'
+alias lc="colorls -l"
 
 if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='vim'
@@ -26,3 +26,4 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+

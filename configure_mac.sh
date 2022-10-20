@@ -28,6 +28,9 @@ sudo yabai --load-sa
 
 brew install --cask miniconda
 
+brew install ruby
+gem install colorls
+
 # Configuration files
 scp .zshrc ~/.zshrc
 scp .vimrc ~/.vimrc
