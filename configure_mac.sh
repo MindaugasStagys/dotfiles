@@ -25,6 +25,8 @@ brew install koekeishiya/formulae/yabai
 sudo yabai --install-sa
 sudo yabai --load-sa
 
+brew install --cask miniconda
+
 # Configuration files
 scp .zshrc ~/.zshrc
 scp .vimrc ~/.vimrc
