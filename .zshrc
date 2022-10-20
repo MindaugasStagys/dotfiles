@@ -10,7 +10,7 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 alias tree="$HOME/tree/usr/bin/tree"
-
+alias icat="kitty +kitten icat"
 alias lc='colorls --sd'
 
 if [[ -n $SSH_CONNECTION ]]; then
