@@ -16,22 +16,21 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # Homebrew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew install htop
 brew install tree
 brew install tmux
 brew install ack
+brew install ruby
+gem install colorls
+
 brew install --cask kitty
+brew install --cask miniconda
 
 brew install koekeishiya/formulae/yabai
 sudo yabai --install-sa
 sudo yabai --load-sa
-
-brew install --cask miniconda
-
-brew install ruby
-gem install colorls
 
 # Configuration files
 scp .zshrc ~/.zshrc
