@@ -182,7 +182,7 @@ function! JKescape(key)
 	if a:key=='j' | let g:esc_j_lasttime = reltimefloat(reltime()) | endif
 	if a:key=='k' | let g:esc_k_lasttime = reltimefloat(reltime()) | endif
 	let l:timediff = abs(g:esc_j_lasttime - g:esc_k_lasttime)
-	return (l:timediff <= 0.2 && l:timediff >=0.001) ? "\b\e" : a:key
+	return (l:timediff <= 0.2 && l:timediff >= 0.001) ? "\b\e" : a:key
 endfunction
 
 " ------------------------------------------------------------
@@ -305,7 +305,34 @@ autocmd vimenter * RainbowParentheses
 " Copy to clipboard
 autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankReg "' | endif
 
-" highlight n'th symbol
-highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 100)
+" Toggle color highlight on 80th character
+highlight OverLength ctermbg=magenta
+fun! LongLineHighlightInit()
+    if !exists('w:llh')
+        call LongLineHighlightOn()
+    endif
+endfunction
+
+fun! LongLineHighlightOn()
+    let w:llh = matchadd('OverLength', '\%81v\s*\zs\S')
+endfunction
+
+fun! LongLineHighlightOff()
+    call matchdelete(w:llh)
+    let w:llh = 0
+endfunction
+
+fun! LongLineHighlightToggle()
+    if !exists('w:llh') || w:llh == 0
+        call LongLineHighlightOn()
+    else
+        call LongLineHighlightOff()
+    endif
+endfunction
+
+augroup LongLineHighlight
+    autocmd BufWinEnter * call LongLineHighlightInit()
+augroup end
+
+nnoremap <leader>1 :call LongLineHighlightToggle()<CR>
 
