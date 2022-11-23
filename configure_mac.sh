@@ -33,6 +33,7 @@ sudo yabai --install-sa
 sudo yabai --load-sa
 
 # Configuration files
+scp catppuccin_mocha-zsh-syntax-highlighting.zsh ~/catppuccin_mocha-zsh-syntax-highlighting.zsh
 scp .zshrc ~/.zshrc
 scp .vimrc ~/.vimrc
 scp .p10k.zsh ~/.p10k.zsh
