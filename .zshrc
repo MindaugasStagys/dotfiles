@@ -11,6 +11,8 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 alias lc='colorls -l'
+alias python='python3'
+alias icat="kitty +kitten icat"
 
 if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='vim'
@@ -26,6 +28,4 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-alias icat="kitty +kitten icat"
 

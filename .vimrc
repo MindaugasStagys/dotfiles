@@ -9,74 +9,71 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 
 " Plugins will be downloaded under the specified directory.
-call vundle#begin('~/.vim/plugged')
-
-" Let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " Better escape
-Plugin 'jdhao/better-escape'
+Plug 'jdhao/better-escape'
 
 " Copy to clipboard
-Plugin 'ojroques/vim-oscyank', {'branch': 'main'}
+Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 
 " Linting
-Plugin 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 
 " Colorschemes
-Plugin 'catppuccin/vim'
+Plug 'catppuccin/vim'
 
 " Vim status line
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Rainbow parentheses
-Plugin 'junegunn/rainbow_parentheses.vim'
+Plug 'junegunn/rainbow_parentheses.vim'
 
 " Git
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " Language pack
-Plugin 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 
 " Insert or delete brackets, parens, quares in pair
-Plugin 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 
 " Tree explorer
-Plugin 'preservim/nerdtree'
+Plug 'preservim/nerdtree'
 
 " Text searching
-Plugin 'dyng/ctrlsf.vim'
+Plug 'dyng/ctrlsf.vim'
 
 " Display tags of the current file
-Plugin 'preservim/tagbar'
+Plug 'preservim/tagbar'
 
 " Switching between companion files (e.g. '.h' and '.cpp' files)
-Plugin 'derekwyatt/vim-fswitch'
+Plug 'derekwyatt/vim-fswitch'
 
 " Pull C++ ptototypes into the implementation file
-Plugin 'derekwyatt/vim-protodef'
+Plug 'derekwyatt/vim-protodef'
 
 " Python autocompletion
-Plugin 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 
 " Drag selection
-Plugin 'gavinbeatty/dragvisuals.vim'
+Plug 'gavinbeatty/dragvisuals.vim'
 
 " dbext
-Plugin 'vim-scripts/dbext.vim'
+Plug 'vim-scripts/dbext.vim'
 
 " REPL enviroments
-Plugin 'sillybun/vim-repl' " Python
-Plugin 'jalvesaq/Nvim-R'   " R
+Plug 'sillybun/vim-repl' " Python
+Plug 'jalvesaq/Nvim-R'   " R
 
 " LaTeX
-Plugin 'lervag/vimtex'
-Plugin 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'lervag/vimtex'
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
 " List ends here. Plugins become visible to Vim after this call.
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 
 " ------------------------------------------------------------
