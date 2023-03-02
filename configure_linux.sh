@@ -45,6 +45,14 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 # powerlevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
+# Newest Vim
+git clone https://github.com/vim/vim.git
+cd vim
+./configure --prefix=$HOME --with-features=huge --enable-multibyte --enable-rubyinterp --enable-pythoninterp --enable-perlinterp --enable-luainterp
+make
+make install
+cd ..
+
 # Vim-plug
 mkdir -p ~/.vim/autoload/
 cd ~/.vim/autoload/
