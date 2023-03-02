@@ -19,24 +19,17 @@ tar xzf ncurses-6.4.tar.gz
 cd ncurses-6.4
 export CXXFLAGS=' -fPIC'
 export CFLAGS=' -fPIC'
-./configure --prefix=$HOME/opt/ncurses --enable-shared
+./configure --prefix=$HOME --enable-shared
 make
 make install
 cd ..
 rm -f ncurses-6.4.tar.gz
 
-INSTALL_PATH='$HOME/opt/ncurses'
-export PATH=$INSTALL_PATH/bin:$PATH
-export LD_LIBRARY_PATH=$INSTALL_PATH/lib:$LD_LIBRARY_PATH
-export CFLAGS=-I$INSTALL_PATH/include
-export CPPFLAGS="-I$INSTALL_PATH/include" LDFLAGS="-L$INSTALL_PATH/lib"
-export LIBS="-L$INSTALL"
-
 # zsh
 wget -O zsh.tar.xz https://sourceforge.net/projects/zsh/files/latest/download
 mkdir zsh && unxz zsh.tar.xz && tar -xvf zsh.tar -C zsh --strip-components 1
 cd zsh
-./configure --prefix=$HOME CFLAGS="-I$HOME/opt/ncurses/include" CXXFLAGS="-I$HOME/opt/ncurses/include" CPPFLAGS="-I$HOME/opt/ncurses/include" LIBS="-L$HOME/opt/ncurses/lib"
+./configure --prefix=$HOME CFLAGS="-I$HOME/include" CXXFLAGS="-I$HOME/include" CPPFLAGS="-I$HOME/include" LIBS="-L$HOME/lib"
 make
 make install
 cd ..
@@ -64,4 +57,91 @@ rm -f Miniconda3-latest-Linux-x86_64.sh
 
 # tmux
 conda install -c conda-forge tmux
+
+# zlib
+wget http://zlib.net/zlib-1.2.13.tar.gz
+tar xzvf zlib-1.2.13.tar.gz
+cd zlib-1.2.13
+./configure --prefix=$HOME
+make
+make install
+rm -f zlib-1.2.13.tar.gz
+
+# Environment
+export PATH=$HOME/bin:$PATH
+export LD_LIBRARY_PATH=$HOME/lib:$LD_LIBRARY_PATH
+export CFLAGS="-I$HOME/include"
+export CPPFLAGS="-I$HOME/include" 
+export LDFLAGS="-L$HOME/lib"
+
+# bzlib
+wget https://sourceware.org/pub/bzip2/bzip2-latest.tar.gz
+tar xzvf bzip2-latest.tar.gz
+cd bzip2-1.0.8
+make -f Makefile-libbz2_so
+make clean
+make -n install PREFIX=$HOME
+make install PREFIX=$HOME
+cd ..
+rm -f bzip2-latest.tar.gz
+
+# liblzma
+wget --no-check-certificate https://tukaani.org/xz/xz-5.4.1.tar.gz
+tar xzvf xz-5.4.1.tar.gz
+cd xz-5.4.1
+./configure --prefix=$HOME
+make -j3
+make install
+cd ..
+rm -f xz-5.4.1.tar.gz
+
+# pcre2
+wget https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.42/pcre2-10.42.tar.gz
+tar xzvf pcre2-10.42.tar.gz
+cd pcre2-10.42
+./configure --enable-utf8 --prefix=$HOME
+make -j3
+make install
+cd ..
+rm -f pcre2-10.42.tar.gz
+
+# openssl
+wget https://www.openssl.org/source/openssl-1.1.1t.tar.gz
+tar xf openssl-1.1.1t.tar.gz
+cd openssl-1.1.2t
+./config --prefix=$HOME/openssl --openssldir=$HOME/openssl shared -Wl,--enable-new-dtags,-rpath,'$(LIBRPATH)'
+make
+make install
+cd ..
+rm -f openssl-1.1.1t.tar.gz
+
+# curl
+wget --no-check-certificate https://curl.se/download/curl-7.88.1.tar.gz
+tar xzvf curl-7.88.1.tar.gz
+cd curl-7.88.1
+./configure --prefix=$HOME --with-ssl=$HOME/openssl
+make -j3
+make install
+cd ..
+rm -f curl-7.88.1.tar.gz
+
+# readline
+wget http://ftp.gnu.org/gnu/readline/readline-4.3.tar.gz
+tar xzvf readline-4.3.tar.gz
+cd readline-4.3
+./configure --prefix=$HOME
+make 
+make install
+cd ..
+rm -f readline-4.3.tar.gz
+
+# R
+wget https://cran.r-project.org/src/base/R-4/R-4.2.2.tar.gz
+tar -zxvf R-4.2.2.tar.gz
+cd R-4.2.2
+PKG_CONFIG_PATH=$HOME/lib/pkgconfig CXXFLAGS=' -fPIC' CFLAGS=' -fPIC' LDFLAGS="-L$HOME/lib -Wl,-rpath=$HOME/lib" ./configure --prefix=$HOME --enable-shared --with-cairo --with-blas --with-lapack --enable-R-shlib --with-readline=yes --with-x=no --with-pcre2
+make
+make install
+cd ..
+rm -f R-4.2.2.tar.gz
 
