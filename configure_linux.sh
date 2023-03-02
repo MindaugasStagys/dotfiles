@@ -75,12 +75,13 @@ export CPPFLAGS="-I$HOME/include"
 export LDFLAGS="-L$HOME/lib"
 
 # bzlib
+CXXFLAGS=' -fPIC' CFLAGS=' -fPIC' ./
+
 wget https://sourceware.org/pub/bzip2/bzip2-latest.tar.gz
 tar xzvf bzip2-latest.tar.gz
 cd bzip2-1.0.8
-make -f Makefile-libbz2_so
-make clean
-make -n install PREFIX=$HOME
+sed -i 's/^CFLAGS=-Wall/CFLAGS=-fPIC -Wall/' Makefile
+make
 make install PREFIX=$HOME
 cd ..
 rm -f bzip2-latest.tar.gz
