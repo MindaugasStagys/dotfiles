@@ -233,7 +233,7 @@ export CFLAGS="-I$HOME/include -L$HOME/lib"
 make
 make install
 cd ../..
-rm -f tcl8.7a5-src.tar.gz
+rm -f tk8.7a5-src.tar.gz
 
 # R
 wget https://cran.r-project.org/src/base/R-4/R-4.2.2.tar.gz
