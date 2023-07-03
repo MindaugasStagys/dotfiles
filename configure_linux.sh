@@ -82,9 +82,8 @@ export CFLAGS="-I$HOME/include"
 export CPPFLAGS="-I$HOME/include" 
 export LDFLAGS="-L$HOME/lib"
 
-# bzlib
+# bzip2
 CXXFLAGS=' -fPIC' CFLAGS=' -fPIC' ./
-
 wget https://sourceware.org/pub/bzip2/bzip2-latest.tar.gz
 tar xzvf bzip2-latest.tar.gz
 cd bzip2-1.0.8
