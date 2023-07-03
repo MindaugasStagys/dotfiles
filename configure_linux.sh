@@ -144,11 +144,102 @@ make install
 cd ..
 rm -f readline-4.3.tar.gz
 
+# xtrans
+wget https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/xtrans/1.4.0-1/xtrans_1.4.0.orig.tar.gz
+tar xvf xtrans_1.4.0.orig.tar.gz
+cd xtrans_1.4.0
+./configure --prefix=$HOME
+make 
+make install
+cd ..
+rm -f xtrans_1.4.0.orig.tar.gz
+
+# xcb-proto
+wget https://xcb.freedesktop.org/dist/xcb-proto-1.15.tar.gz
+tar xvf xcb-proto-1.15.tar.gz
+cd xcb-proto-1.15
+./configure --prefix=$HOME
+make
+make install
+cd ..
+rm -f xcb-proto-1.15.tar.gz
+
+# libpthread
+wget https://xcb.freedesktop.org/dist/libpthread-stubs-0.4.tar.gz
+tar xvf libpthread-stubs-0.4.tar.gz
+cd libpthread-stubs-0.4
+./configure --prefix=$HOME
+make
+make install
+cd ..
+rm -f libpthread-stubs-0.4.tar.gz
+
+# xorgproto
+wget https://xorg.freedesktop.org/archive/individual/proto/xorgproto-2023.2.tar.xz
+tar xvf xorgproto-2023.2.tar.xz
+cd xorgproto-2023.2
+./configure --prefix=$HOME
+make 
+make install
+cd ..
+rm -f xorgproto-2023.2.tar.xz
+
+# libxau
+wget http://deb.debian.org/debian/pool/main/libx/libxau/libxau_1.0.9.orig.tar.gz
+tar xvf libxau_1.0.9.orig.tar.gz
+cd libxau_1.0.9
+PKG_CONFIG_PATH=$HOME/lib/pkgconfig:$HOME/share/pkgconfig ./configure --prefix=$HOME
+make 
+make install
+cd ..
+rm -f libxau_1.0.9.orig.tar.gz
+
+# libxcb
+wget http://deb.debian.org/debian/pool/main/libx/libxcb/libxcb_1.15.orig.tar.gz
+tar xvf libxcb_1.15.orig.tar.gz
+cd libxcb-1.15
+PKG_CONFIG_PATH=$HOME/lib/pkgconfig:$HOME/share/pkgconfig ./configure --prefix=$HOME
+make
+make install
+cd ..
+rm -f libxcb_1.15.orig.tar.gz
+
+# X11
+wget http://security.debian.org/debian-security/pool/updates/main/libx/libx11/libx11_1.8.4.orig.tar.gz
+tar xvf libx11_1.8.4.orig.tar.gz
+cd libX11-1.8.4
+PKG_CONFIG_PATH=$HOME/lib/pkgconfig:$HOME/share/pkgconfig ./configure --prefix=$HOME
+make 
+make install
+cd ..
+rm -f libx11_1.8.4.orig.tar.gz
+
+# Tcl
+wget http://prdownloads.sourceforge.net/tcl/tcl8.7a5-src.tar.gz
+tar xvf tcl8.7a5-src.tar.gz
+cd tcl8.7a5/unix
+./configure --prefix=$HOME
+make
+make install
+cd ../..
+rm -f tcl8.7a5-src.tar.gz
+
+# Tk
+wget http://prdownloads.sourceforge.net/tcl/tk8.7a5-src.tar.gz
+tar xvf tk8.7a5-src.tar.gz 
+cd tk8.7a5/unix
+export CFLAGS="-I$HOME/include -L$HOME/lib"
+./configure --prefix=$HOME
+make
+make install
+cd ../..
+rm -f tcl8.7a5-src.tar.gz
+
 # R
 wget https://cran.r-project.org/src/base/R-4/R-4.2.2.tar.gz
 tar -zxvf R-4.2.2.tar.gz
 cd R-4.2.2
-PKG_CONFIG_PATH=$HOME/lib/pkgconfig CXXFLAGS=' -fPIC' CFLAGS=' -fPIC' LDFLAGS="-L$HOME/lib -Wl,-rpath=$HOME/lib" ./configure --prefix=$HOME --enable-shared --with-cairo --with-blas --with-lapack --enable-R-shlib --with-readline=yes --with-x=no --with-pcre2
+PKG_CONFIG_PATH=$HOME/lib/pkgconfig CXXFLAGS=' -fPIC' CFLAGS=' -fPIC' LDFLAGS="-L$HOME/lib -Wl,-rpath=$HOME/lib" ./configure --prefix=$HOME --enable-shared --with-cairo --with-blas --with-lapack --enable-R-shlib --with-readline=yes --with-x=no --with-pcre2 --with-tcl-config=$HOME/lib/tclConfig.sh --with-tk-config=$HOME/lib/tkConfig.sh
 make
 make install
 cd ..
