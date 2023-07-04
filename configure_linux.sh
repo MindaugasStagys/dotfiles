@@ -63,9 +63,6 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
 rm -f Miniconda3-latest-Linux-x86_64.sh
 
-# tmux
-conda install -c conda-forge tmux
-
 # zlib
 wget http://zlib.net/zlib-1.2.13.tar.gz
 tar xzvf zlib-1.2.13.tar.gz
@@ -73,6 +70,7 @@ cd zlib-1.2.13
 ./configure --prefix=$HOME
 make
 make install
+cd ..
 rm -f zlib-1.2.13.tar.gz
 
 # Environment
@@ -244,3 +242,24 @@ make install
 cd ..
 rm -f R-4.2.2.tar.gz
 
+# Libevent
+wget https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz
+tar xvf libevent-2.1.12-stable.tar.gz
+cd libevent-2.1.12-stable
+./configure --prefix=$HOME
+make
+make install
+cd ..
+rm -f libevent-2.1.12-stable.tar.gz
+
+# tmux
+export CFLAGS="-I$HOME/include/ncurses"
+export CPPFLAGS="-I$HOME/include/ncurses"
+wget https://github.com/tmux/tmux/releases/download/3.3a/tmux-3.3a.tar.gz
+tar xvf tmux-3.3a.tar.gz
+cd tmux-3.3a
+./configure --prefix=$HOME
+make
+make install
+cd ..
+rm -f tmux-3.3a.tar.gz
