@@ -242,6 +242,26 @@ make install
 cd ..
 rm -f R-4.2.2.tar.gz
 
+# fontconfig
+wget http://deb.debian.org/debian/pool/main/f/fontconfig/fontconfig_2.14.1.orig.tar.xz
+tar xf fontconfig_2.14.1.orig.tar.xz
+cd fontconfig_2.14.1
+./configure --prefix=$HOME
+make
+make install
+cd ..
+rm -f fontconfig_2.14.1.orig.tar.xz
+
+# freetype2
+wget https://download-mirror.savannah.gnu.org/releases/freetype/freetype-2.13.1.tar.gz
+tar xvf freetype-2.13.1.tar.gz
+cd freetype-2.13.1
+./configure --prefix=$HOME
+make
+make install
+cd ..
+rm -f freetype-2.13.1.tar.gz
+
 # Libevent
 wget https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz
 tar xvf libevent-2.1.12-stable.tar.gz
