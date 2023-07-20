@@ -57,6 +57,7 @@ cd ..
 mkdir -p ~/.vim/autoload/
 cd ~/.vim/autoload/
 wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+cd ~
 
 # Environment
 export PATH=$HOME/bin:$PATH
