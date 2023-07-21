@@ -72,6 +72,9 @@ Plug 'jalvesaq/Nvim-R'   " R
 Plug 'lervag/vimtex'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
+" Pattern highlighting
+Plug 'markonm/traces.vim'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 filetype plugin indent on
