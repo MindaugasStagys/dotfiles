@@ -242,9 +242,6 @@ nmap         <C-J>      :term<CR>
 inoremap     <expr>j    JKescape('j')
 inoremap     <expr>k    JKescape('k')
 
-" Rainbow parentheses
-nnoremap     <leader>rp :RainbowParentheses!!<CR>
-
 " NERDTree
 nmap         <C-n>      :NERDTreeToggle<CR>
 
