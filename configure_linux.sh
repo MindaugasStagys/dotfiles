@@ -41,6 +41,7 @@ bash install.sh
 rm install.sh
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+rm -f install.sh
 
 # powerlevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
@@ -59,11 +60,21 @@ cd ~/.vim/autoload/
 wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 cd ~
 
+# libevent
+wget https://github.com/libevent/libevent/releases/download/release-2.1.12-stable/libevent-2.1.12-stable.tar.gz
+tar xvf libevent-2.1.12-stable.tar.gz
+cd libevent-2.1.12-stable
+./configure --prefix=$HOME
+make
+make install
+cd ..
+rm -f libevent-2.1.12-stable.tar.gz
+
 # Environment
 export PATH=$HOME/bin:$PATH
 export LD_LIBRARY_PATH=$HOME/lib:$LD_LIBRARY_PATH
-export CFLAGS="-I$HOME/include/ncurses"
-export CPPFLAGS="-I$HOME/include/ncurses"
+export CFLAGS="-I$HOME/include"
+export CPPFLAGS="-I$HOME/include"
 export LDFLAGS="-L$HOME/lib"
 
 # tmux
