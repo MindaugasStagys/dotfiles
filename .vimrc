@@ -90,7 +90,7 @@ let g:AutoPairsShortcutToggle = '<C-P>'
 " ------------------------------------------------------------
 
 if has('termguicolors')
-set termguicolors
+    set termguicolors
 endif
 
 colorscheme catppuccin_mocha
@@ -228,7 +228,6 @@ set tabstop=4           " How many columns of whitespace a \t is worth
 set shiftwidth=4        " How many columns of whitespace a level of indentation is worth
 set expandtab           " Use spaces when tabbing
 set background=dark     " Set background 
-set notermguicolors     " For transparent terminal
 
 " ------------------------------------------------------------
 " Key mappings
