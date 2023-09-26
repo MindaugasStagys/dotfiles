@@ -49,7 +49,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 # Newest Vim
 git clone https://github.com/vim/vim.git
 cd vim
-./configure --prefix=$HOME --with-features=huge --enable-multibyte --enable-rubyinterp --enable-pythoninterp --enable-perlinterp --enable-luainterp
+./configure --prefix=$HOME --with-features=huge --enable-multibyte --enable-rubyinterp --enable-pythoninterp --enable-python3interp --enable-perlinterp --enable-luainterp --with-python-config-dir=/usr/bin/python3/python3-config
 make
 make install
 cd ..
