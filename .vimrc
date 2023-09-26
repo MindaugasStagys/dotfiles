@@ -299,7 +299,7 @@ autocmd FileType tex nmap <buffer> <C-T> :!latexmk -pdf %<CR>
 autocmd vimenter * RainbowParentheses
 
 " Copy to clipboard
-autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankReg "' | endif
+autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankRegister "' | endif
 
 " Toggle color highlight on 80th character
 highlight OverLength ctermbg=magenta
