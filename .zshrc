@@ -2,6 +2,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+export TERM='xterm-256color'
 export ZSH=$HOME/.oh-my-zsh
 
 DISABLE_UNTRACKED_FILES_DIRTY="true"
