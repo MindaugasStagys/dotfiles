@@ -86,3 +86,8 @@ make
 make install
 cd ..
 rm -f tmux-3.3a.tar.gz
+
+# Miniconda
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+rm -f Miniconda3-latest-Linux-x86_64.sh
