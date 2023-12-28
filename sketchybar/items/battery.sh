@@ -10,7 +10,6 @@ sketchybar --add item battery right                     \
                          background.padding_left=0      \
                                                         \
            --add item power_logo right                  \
-           --set power_logo icon=                      \
-                 icon.color=$MIDNIGHT                   \
+           --set power_logo icon.color=$MIDNIGHT        \
                  label.drawing=off                      \
                  background.color=$GREEN
