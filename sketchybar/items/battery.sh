@@ -11,5 +11,5 @@ sketchybar --add item battery right                     \
                                                         \
            --add item power_logo right                  \
            --set power_logo icon.color=$MIDNIGHT        \
-                 label.drawing=off                      \
-                 background.color=$GREEN
+                            label.drawing=off           \
+                            background.color=$GREEN

@@ -54,6 +54,9 @@ source "$ITEM_DIR/apple.sh"
 source "$ITEM_DIR/spaces.sh"
 source "$ITEM_DIR/spotifyIndicator.sh"
 
+# Center
+source "$ITEM_DIR/weather.sh"
+
 # Right
 source "$ITEM_DIR/time.sh"
 source "$ITEM_DIR/date.sh"

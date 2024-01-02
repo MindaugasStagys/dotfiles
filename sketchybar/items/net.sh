@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 
 sketchybar --add item net right                      \
-           --set net script="$PLUGIN_DIR/net.sh"     \
+           --set net update_freq=30                  \
+                     script="$PLUGIN_DIR/net.sh"     \
                      icon.drawing=off                \
                      background.color=$MIDNIGHT      \
                      background.border_color=$MAROON \
@@ -10,6 +11,6 @@ sketchybar --add item net right                      \
                                                      \
            --add item net_logo right                 \
            --set net_logo icon=                     \
-                     icon.color=$MIDNIGHT            \
-                     label.drawing=off               \
-                     background.color=$MAROON
+                          icon.color=$MIDNIGHT       \
+                          label.drawing=off          \
+                          background.color=$MAROON
