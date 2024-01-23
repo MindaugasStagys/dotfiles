@@ -33,14 +33,14 @@ sudo yabai --install-sa
 sudo yabai --load-sa
 
 # Configuration files
-scp catppuccin_mocha-zsh-syntax-highlighting.zsh ~/catppuccin_mocha-zsh-syntax-highlighting.zsh
-scp .zshrc ~/.zshrc
-scp .vimrc ~/.vimrc
-scp .p10k.zsh ~/.p10k.zsh
-scp kitty.conf ~/.config/kitty/kitty.conf
-scp .tmux.conf ~/.tmux.conf
-scp .tmux.conf.local ~/.tmux.conf.local
-scp .yabairc ~/.yabairc
+cp catppuccin_mocha-zsh-syntax-highlighting.zsh ~/catppuccin_mocha-zsh-syntax-highlighting.zsh
+cp .zshrc ~/.zshrc
+cp .vimrc ~/.vimrc
+cp .p10k.zsh ~/.p10k.zsh
+cp kitty.conf ~/.config/kitty/kitty.conf
+cp .tmux.conf ~/.tmux.conf
+cp .tmux.conf.local ~/.tmux.conf.local
+cp .yabairc ~/.yabairc
 
 # Restart shell
 exec zsh
