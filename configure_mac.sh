@@ -20,6 +20,9 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 # Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+brew remove vim
+brew cleanup
+brew install vim --with-python3
 brew install htop
 brew install tree
 brew install tmux
