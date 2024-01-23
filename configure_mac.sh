@@ -2,6 +2,8 @@
 parent_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 cd "$parent_path"
 
+xcode-select --install
+
 # Vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -29,14 +31,16 @@ brew install --cask kitty
 brew install --cask miniconda
 
 brew install koekeishiya/formulae/yabai
-sudo yabai --install-sa
-sudo yabai --load-sa
+brew install koekeishiya/formulae/skhd
 
 brew tap FelixKratz/formulae
 brew install sketchybar
 
 brew tap homebrew/cask-fonts
 brew install --cask font-hack-nerd-font
+
+yabai --start-service
+skhd --start-service
 
 # Configuration files
 cp catppuccin_mocha-zsh-syntax-highlighting.zsh ~/catppuccin_mocha-zsh-syntax-highlighting.zsh
@@ -47,6 +51,7 @@ cp kitty.conf ~/.config/kitty/kitty.conf
 cp .tmux.conf ~/.tmux.conf
 cp .tmux.conf.local ~/.tmux.conf.local
 cp .yabairc ~/.yabairc
+cp .skhdrc ~/.skhdrc
 cp -r sketchybar ~/.config/sketchybar
 cp mocha.conf ~/.config/kitty/mocha.conf
 
