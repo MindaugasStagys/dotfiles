@@ -22,7 +22,8 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 
 brew remove vim
 brew cleanup
-brew install vim --with-python3
+brew reinstall python3
+brew install vim
 brew install htop
 brew install tree
 brew install tmux
