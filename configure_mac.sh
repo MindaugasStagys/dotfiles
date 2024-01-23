@@ -48,6 +48,7 @@ cp .tmux.conf ~/.tmux.conf
 cp .tmux.conf.local ~/.tmux.conf.local
 cp .yabairc ~/.yabairc
 cp -r sketchybar ~/.config/sketchybar
+cp mocha.conf ~/.config/kitty/mocha.conf
 
 # Restart shell
 exec zsh
