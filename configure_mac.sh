@@ -32,6 +32,12 @@ brew install koekeishiya/formulae/yabai
 sudo yabai --install-sa
 sudo yabai --load-sa
 
+brew tap FelixKratz/formulae
+brew install sketchybar
+
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
+
 # Configuration files
 cp catppuccin_mocha-zsh-syntax-highlighting.zsh ~/catppuccin_mocha-zsh-syntax-highlighting.zsh
 cp .zshrc ~/.zshrc
@@ -41,6 +47,7 @@ cp kitty.conf ~/.config/kitty/kitty.conf
 cp .tmux.conf ~/.tmux.conf
 cp .tmux.conf.local ~/.tmux.conf.local
 cp .yabairc ~/.yabairc
+cp -r sketchybar ~/.config/sketchybar
 
 # Restart shell
 exec zsh
