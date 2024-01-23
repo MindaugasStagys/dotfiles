@@ -55,5 +55,8 @@ cp .skhdrc ~/.skhdrc
 cp -r sketchybar ~/.config/sketchybar
 cp mocha.conf ~/.config/kitty/mocha.conf
 
+curl https://bootstrap.pypa.io/get-pip.py > get-pip.py
+sudo python3 get-pip.py
+
 # Restart shell
 exec zsh
