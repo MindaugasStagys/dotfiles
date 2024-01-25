@@ -42,6 +42,7 @@ brew install sketchybar
 
 brew tap homebrew/cask-fonts
 brew install --cask font-hack-nerd-font
+brew install --cask sf-symbols
 
 yabai --start-service
 skhd --start-service
