@@ -11,7 +11,7 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-alias lc='colorls -l'
+alias lc='colorls --gs --sf -l -A'
 alias python='python3'
 alias icat="kitty +kitten icat"
 
