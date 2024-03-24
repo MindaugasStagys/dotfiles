@@ -1,5 +1,8 @@
 #!/bin/bash
-parent_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
+parent_path=$(
+	cd "$(dirname "${BASH_SOURCE[0]}")"
+	pwd -P
+)
 cd "$parent_path"
 
 xcode-select --install
@@ -29,6 +32,8 @@ brew install tree
 brew install tmux
 brew install ack
 brew install ruby
+brew install npm
+brew install ripgrep
 gem install colorls
 
 brew install --cask kitty
@@ -60,7 +65,7 @@ cp .skhdrc ~/.skhdrc
 cp -r sketchybar ~/.config/sketchybar
 cp mocha.conf ~/.config/kitty/mocha.conf
 
-curl https://bootstrap.pypa.io/get-pip.py > get-pip.py
+curl https://bootstrap.pypa.io/get-pip.py >get-pip.py
 sudo python3 get-pip.py
 
 # Restart shell
