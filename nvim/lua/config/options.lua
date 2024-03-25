@@ -19,3 +19,4 @@ vim.g.coq_settings = {
     },
 }
 vim.g.slime_python_ipython = 1
+--vim.g.codeium_render = true
