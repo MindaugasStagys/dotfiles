@@ -28,3 +28,12 @@ vim.keymap.set(
         desc = "Search on current file",
     }
 )
+vim.keymap.set("n", "<localleader>w", function()
+    require("nvim-python-repl").send_statement_definition()
+end, { desc = "Send semantic unit to REPL" })
+vim.keymap.set("v", "<localleader>w", function()
+    require("nvim-python-repl").send_visual_to_repl()
+end, { desc = "Send visual selection to REPL" })
+vim.keymap.set("n", "<localleader>vs", function()
+    require("nvim-python-repl").toggle_vertical()
+end, { desc = "Create REPL in vertical or horizontal split" })
