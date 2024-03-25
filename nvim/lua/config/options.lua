@@ -12,5 +12,10 @@ vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
 
-vim.g.coq_settings = { auto_start = "shut-up" }
+vim.g.coq_settings = {
+    auto_start = "shut-up",
+    keymap = {
+        pre_select = false,
+    },
+}
 vim.g.slime_python_ipython = 1
