@@ -1,0 +1,5 @@
+return {
+    {
+        "jpalardy/vim-slime",
+    },
+}
