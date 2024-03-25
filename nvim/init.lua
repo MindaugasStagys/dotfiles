@@ -34,3 +34,17 @@ vim.api.nvim_set_keymap(
     ":ToggleHighlight<CR>",
     { noremap = true, silent = true }
 )
+
+-- Define the Lua function to open a Neovim terminal in a vertical split
+function OpenVerticalTerminal()
+    vim.cmd("vsplit term://zsh")
+    vim.cmd("startinsert")
+end
+
+-- Map <leader><leader> to the function
+vim.api.nvim_set_keymap(
+    "n",
+    "<localleader><localleader>",
+    "<cmd>lua OpenVerticalTerminal()<CR>",
+    { noremap = true, silent = true }
+)

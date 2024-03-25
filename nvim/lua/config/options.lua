@@ -6,10 +6,11 @@ vim.opt.expandtab = true
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 
-vim.g.coq_settings = { auto_start = "shut-up" }
-
 vim.opt.signcolumn = "yes"
 vim.opt.foldcolumn = "1"
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
+
+vim.g.coq_settings = { auto_start = "shut-up" }
+vim.g.slime_python_ipython = 1
