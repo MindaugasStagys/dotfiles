@@ -19,4 +19,26 @@ vim.g.coq_settings = {
     },
 }
 vim.g.slime_python_ipython = 1
---vim.g.codeium_render = true
+
+vim.g.vimtex_view_method = "skim"
+vim.g.vimtex_compiler_progname = "nvr"
+vim.g.tex_flavor = "latex"
+vim.g.vimtex_view_skim_sync = 1
+vim.g.vimtex_view_skim_activate = 1
+vim.g.livepreview_previewer = "open -a Skim"
+vim.g.vimtex_compiler_latexmk = {
+    backend = "nvim",
+    background = 1,
+    build_dir = "",
+    callback = 1,
+    continuous = 1,
+    executable = "latexmk",
+    options = {
+        "-pvc",
+        "-shell-escape",
+        "-verbose",
+        "-file-line-error",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+    },
+}

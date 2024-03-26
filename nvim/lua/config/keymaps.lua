@@ -41,3 +41,7 @@ end, { desc = "Create REPL in vertical or horizontal split" })
 vim.keymap.set("n", "git", "<cmd>Neogit<CR>", {
     desc = "Open Neogit",
 })
+
+vim.keymap.set("n", "venv", "<cmd>VenvSelect<CR>", {
+    desc = "Open venv selection",
+})
