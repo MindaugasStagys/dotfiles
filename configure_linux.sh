@@ -10,7 +10,10 @@ cp catppuccin_mocha-zsh-syntax-highlighting.zsh ~/catppuccin_mocha-zsh-syntax-hi
 
 source ~/.bash_profile
 
-parent_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
+parent_path=$(
+	cd "$(dirname "${BASH_SOURCE[0]}")"
+	pwd -P
+)
 cd "$parent_path"
 
 # ncurses
@@ -91,3 +94,17 @@ rm -f tmux-3.3a.tar.gz
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
 rm -f Miniconda3-latest-Linux-x86_64.sh
+
+# Nvim
+sudo apt install fd-find npm nodejs
+
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+sudo rm -rf /opt/nvim
+sudo tar -C /opt -xzf nvim-linux64.tar.gz
+rm -f nvim-linux64.tar.gz
+
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+rm -rf ~/.config/nvim/.git
+
+rm -rf ~/.config/nvim
+cp -r ~/dotfiles/nvim ~/.config/nvim
