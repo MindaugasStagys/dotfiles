@@ -29,6 +29,7 @@ brew reinstall python3
 brew install ipython
 brew install vim
 brew install htop
+brew install fd
 brew install tree
 brew install tmux
 brew install ack
