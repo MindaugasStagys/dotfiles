@@ -37,3 +37,7 @@ end, { desc = "Send visual selection to REPL" })
 vim.keymap.set("n", "<localleader>vs", function()
     require("nvim-python-repl").toggle_vertical()
 end, { desc = "Create REPL in vertical or horizontal split" })
+
+vim.keymap.set("n", "git", "<cmd>Neogit<CR>", {
+    desc = "Open Neogit",
+})
