@@ -3,7 +3,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export PATH=$HOME/bin:$HOME/openssl/bin:/opt/nvim-linux64/bin:$PATH
-export TERM='xterm-256color'
+export TERM='screen-256color'
 export ZSH=$HOME/.oh-my-zsh
 
 DISABLE_UNTRACKED_FILES_DIRTY="true"
