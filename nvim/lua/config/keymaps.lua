@@ -45,21 +45,3 @@ vim.keymap.set("n", "git", "<cmd>Neogit<CR>", {
 vim.keymap.set("n", "venv", "<cmd>VenvSelect<CR>", {
     desc = "Open venv selection",
 })
-
-local function copy(lines, _)
-    require("osc52").copy(table.concat(lines, "\n"))
-end
-
-local function paste()
-    return { vim.fn.split(vim.fn.getreg(""), "\n"), vim.fn.getregtype("") }
-end
-
-vim.g.clipboard = {
-    name = "osc52",
-    copy = { ["+"] = copy, ["*"] = copy },
-    paste = { ["+"] = paste, ["*"] = paste },
-}
-
-vim.keymap.set("n", "<leader>y", '"+y')
-vim.keymap.set("n", "<leader>yy", '"+yy')
-vim.keymap.set("v", "<leader>y", '"+y')
