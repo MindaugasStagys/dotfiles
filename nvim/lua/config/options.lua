@@ -42,3 +42,29 @@ vim.g.vimtex_compiler_latexmk = {
         "-interaction=nonstopmode",
     },
 }
+
+vim.g.rainbow_active = 1
+vim.g.rainbow_load_separately = {
+    { "*", { "(", ")" }, { "\\[", "\\]" }, { "{", "}" } },
+    { "*.tex", { "(", ")" }, { "\\[", "\\]" } },
+    { "*.cpp", { "(", ")" }, { "\\[", "\\]" }, { "{", "}" } },
+    {
+        "*.{html,htm}",
+        { "(", ")" },
+        { "\\[", "\\]" },
+        { "{", "}" },
+        { "<\\a[^>]*>", "</[^>]*>" },
+    },
+}
+vim.g.rainbow_guifgs = {
+    "#f38ba9",
+    "#f9e2b0",
+    "#74c7ed",
+    "#a6e3a2",
+    "#fab388",
+    "#f5c2e8",
+    "#89b4fb",
+    "#94e2d6",
+    "#cba6f8",
+    "#f2cdce",
+}
