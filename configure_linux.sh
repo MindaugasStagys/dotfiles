@@ -6,6 +6,7 @@ cp .vimrc ~/.vimrc
 cp .p10k.zsh ~/.p10k.zsh
 cp .tmux.conf ~/.tmux.conf
 cp .tmux.conf.local ~/.tmux.conf.local
+cp .lintr ~/.lintr
 cp catppuccin_mocha-zsh-syntax-highlighting.zsh ~/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
 source ~/.bash_profile
