@@ -1,6 +1,6 @@
 return {
     {
-        "frazrepo/vim-rainbow",
+        "luochen1990/rainbow",
     },
     {
         "HiPhish/rainbow-delimiters.nvim",
