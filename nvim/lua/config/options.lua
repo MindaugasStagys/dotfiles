@@ -42,14 +42,3 @@ vim.g.vimtex_compiler_latexmk = {
         "-interaction=nonstopmode",
     },
 }
-
-vim.g.rainbow_active = 1
-vim.g.rainbow_conf = {
-    guifgs = {
-        "#F2CDCD",
-        "#89DCEB",
-        "#F5C2E7",
-        "#94E2D5",
-        "#F38BA8",
-    },
-}
