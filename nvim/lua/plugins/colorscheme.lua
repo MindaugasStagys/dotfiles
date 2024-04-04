@@ -41,6 +41,16 @@ return {
                 treesitter_context = true,
                 which_key = true,
             },
+            custom_highlights = function(colors)
+                return {
+                    DiffChange = { bg = "#a6e3a1", fg = "black" },
+                    DiffDelete = { bg = "#f38ba8", fg = "black" },
+                    Visual = { bg = "#7ec9d8", fg = "white" },
+                    CursorLine = { bg = "#3f404f" },
+                    illuminatedWordText = { bg = "#5886b0" },
+                    Comment = { fg = colors.flamingo },
+                }
+            end,
         },
     },
     {
