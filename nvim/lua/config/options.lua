@@ -21,6 +21,9 @@ vim.g.coq_settings = {
         pre_select = false,
         manual_complete = "<c-p>",
     },
+    limits = {
+        completion_manual_timeout = 0.166,
+    },
 }
 vim.g.slime_python_ipython = 1
 
