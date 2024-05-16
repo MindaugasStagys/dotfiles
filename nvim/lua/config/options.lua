@@ -14,8 +14,12 @@ vim.opt.foldenable = true
 
 vim.g.coq_settings = {
     auto_start = "shut-up",
+    completion = {
+        always = false,
+    },
     keymap = {
         pre_select = false,
+        manual_complete = "<c-p>",
     },
 }
 vim.g.slime_python_ipython = 1
