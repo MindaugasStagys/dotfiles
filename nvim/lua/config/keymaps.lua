@@ -45,7 +45,3 @@ vim.keymap.set("n", "git", "<cmd>Neogit<CR>", {
 vim.keymap.set("n", "venv", "<cmd>VenvSelect<CR>", {
     desc = "Open venv selection",
 })
-
-vim.keymap.set("n", "rain", "<cmd>RainbowToggle<CR>", {
-    desc = "Load rainbow parenthesis",
-})
