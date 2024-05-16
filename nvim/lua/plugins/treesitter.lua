@@ -57,6 +57,7 @@ return {
             indent = { enable = true },
             ensure_installed = {
                 "r",
+                "rnoweb",
                 "bash",
                 "c",
                 "diff",
