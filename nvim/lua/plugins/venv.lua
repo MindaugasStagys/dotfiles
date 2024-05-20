@@ -7,15 +7,14 @@ return {
             "mfussenegger/nvim-dap-python",
         },
         opts = {
-            -- Your options go here
-            -- name = "venv",
-            -- auto_refresh = false
+            path = "/Users/mindaugasstagys/.venv",
+            search_workspace = false,
+            name = "venv",
+            parents = 0,
         },
-        event = "VeryLazy", -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
+        event = "VeryLazy",
         keys = {
-            -- Keymap to open VenvSelector to pick a venv.
             { "<leader>vs", "<cmd>VenvSelect<cr>" },
-            -- Keymap to retrieve the venv from a cache (the one previously used for the same project directory).
             { "<leader>vc", "<cmd>VenvSelectCached<cr>" },
         },
     },
