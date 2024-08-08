@@ -154,7 +154,7 @@ sketchybar --add       event           spotify_change $SPOTIFY_EVENT        \
            --set       spot            update_freq=1                        \
                                        icon.drawing=off                     \
                                        updates=on                           \
-                                       script="$PLUGIN_DIR/spotify.sh"      \
+                                       script="$PLUGIN_DIR/spotifyIndicator.sh" \
                                        background.color=$MIDNIGHT           \
                                        background.border_color=$PINK        \
                                        background.border_width=1            \
