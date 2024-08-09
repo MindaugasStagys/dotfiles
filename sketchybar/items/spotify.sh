@@ -35,6 +35,8 @@ sketchybar --add       event           spotify_change $SPOTIFY_EVENT        \
                                        background.padding_right=0           \
                                        width=0                              \
                                        label.font="$FONT:Bold:14.0"         \
+                                       label.max_chars=23                   \
+                                       scroll_texts=on                      \
                                        y_offset=45                          \
                                                                             \
            --add       item            spotify.artist popup.spotify.anchor  \
@@ -42,12 +44,16 @@ sketchybar --add       event           spotify_change $SPOTIFY_EVENT        \
                                        y_offset=25                          \
                                        background.padding_left=0            \
                                        background.padding_right=0           \
+                                       label.max_chars=27                   \
+                                       scroll_texts=on                      \
                                        width=0                              \
                                                                             \
            --add       item            spotify.album popup.spotify.anchor   \
            --set       spotify.album   icon.drawing=off                     \
                                        background.padding_left=0            \
                                        background.padding_right=0           \
+                                       label.max_chars=27                   \
+                                       scroll_texts=on                      \
                                        y_offset=8                           \
                                        width=0                              \
                                                                             \
@@ -97,7 +103,7 @@ sketchybar --add       event           spotify_change $SPOTIFY_EVENT        \
            --subscribe spotify.back    mouse.clicked                        \
                                                                             \
 	       --add       item            spotify.play popup.spotify.anchor    \
-	       --set       spotify.play    icon=􀊔                              \
+           --set       spotify.play    icon=􀊄                              \
                                        background.height=40                 \
 	                                   background.corner_radius=20          \
                                        width=40                             \
@@ -155,6 +161,9 @@ sketchybar --add       event           spotify_change $SPOTIFY_EVENT        \
                                        icon.drawing=off                     \
                                        updates=on                           \
                                        script="$PLUGIN_DIR/spotifyIndicator.sh" \
+                                       label.max_chars=50                   \
+                                       label.scroll_duration=300            \
+                                       scroll_texts=on                      \
                                        background.color=$MIDNIGHT           \
                                        background.border_color=$PINK        \
                                        background.border_width=1            \
