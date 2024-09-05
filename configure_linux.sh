@@ -110,3 +110,9 @@ rm -rf ~/.config/nvim/.git
 
 rm -rf ~/.config/nvim
 cp -r ~/dotfiles/nvim ~/.config/nvim
+
+# Ruby
+sudo apt-get install ruby-full
+
+# colorls
+sudo gem install colorls
