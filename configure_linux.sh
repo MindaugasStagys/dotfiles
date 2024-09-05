@@ -1,5 +1,6 @@
 #!/bin/bash
 
+mkdir ~/.config
 cp .bash_profile ~/.bash_profile
 cp .zshrc ~/.zshrc
 cp .vimrc ~/.vimrc
