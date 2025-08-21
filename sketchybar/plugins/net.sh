@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 
-LABEL=$(ipconfig getsummary en0 | awk -F ' SSID : ' '/ SSID : / {print $2}')
+LABEL=$(system_profiler SPAirPortDataType | awk '/Current Network/ {getline;$1=$1; gsub(":",""); print;exit}')
 
 sketchybar --set $NAME label=$LABEL
