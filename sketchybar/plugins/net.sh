@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 
-LABEL=$(system_profiler SPAirPortDataType -detailLevel basic | awk '/Current Network/ {getline;$1=$1;print $0 | "tr -d ':'";exit}')
+LABEL=$(networksetup -listpreferredwirelessnetworks en0 | sed -n '2p' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
 
 sketchybar --set $NAME label=$LABEL
