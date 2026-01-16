@@ -51,6 +51,9 @@ brew tap homebrew/cask-fonts
 brew install --cask font-hack-nerd-font
 brew install --cask sf-symbols
 
+brew tap supreme-gg-gg/tap
+brew install instagram-cli
+
 yabai --start-service
 skhd --start-service
 
