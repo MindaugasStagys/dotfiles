@@ -2,9 +2,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export PATH=$HOME/bin:$HOME/openssl/bin:/opt/nvim-linux64/bin:$PATH
-export TERM='xterm-256color'
+export TERM="xterm-256color"
 export ZSH=$HOME/.oh-my-zsh
+
+export PATH=$HOME/bin:$HOME/openssl/bin:/opt/nvim-linux64/bin:$PATH
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/postgresql@15/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/postgresql@15/include"
 
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="yyyy/mm/dd"
@@ -15,6 +19,7 @@ source $ZSH/oh-my-zsh.sh
 alias lc='colorls --gs --sf -l -A'
 alias python='python3'
 alias icat="kitty +kitten icat"
+alias surge="~/go/bin/surge"
 
 if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='vim'
@@ -30,4 +35,3 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-

@@ -73,3 +73,6 @@ sudo python3 get-pip.py
 
 # Restart shell
 exec zsh
+
+# Install surge download manager
+go install github.com/junaid2005p/surge@latest
