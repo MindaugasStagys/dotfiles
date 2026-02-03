@@ -3,19 +3,27 @@ return {
         "linux-cultist/venv-selector.nvim",
         dependencies = {
             "neovim/nvim-lspconfig",
-            "mfussenegger/nvim-dap",
+            "nvim-telescope/telescope.nvim",
             "mfussenegger/nvim-dap-python",
-            {
-                "nvim-telescope/telescope.nvim",
-                branch = "0.1.x",
-                dependencies = { "nvim-lua/plenary.nvim" },
+        },
+        opts = {
+            search = {
+                anaconda_base = false,
+                anaconda_envs = false,
+                cwd = false,
+                file = false,
+                hatch = false,
+                miniconda_base = false,
+                pipx = false,
+                poetry = false,
+                virtualenvs = false,
+                workspace = false,
+                pyenv = {
+                    command = "$FD '/bin/python$' ~/.venv --no-ignore-vcs --full-path --color never -E pkgs/ -E envs/ -L",
+                },
             },
         },
-        lazy = false,
-        branch = "regexp", -- This is the regexp branch, use this for the new version
-        config = function()
-            require("venv-selector").setup()
-        end,
+        event = "VeryLazy",
         keys = {
             { "<leader>vs", "<cmd>VenvSelect<cr>" },
             { "<leader>vc", "<cmd>VenvSelectCached<cr>" },

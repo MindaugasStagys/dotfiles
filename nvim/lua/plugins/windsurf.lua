@@ -1,7 +1,6 @@
--- Remove the `use` here if you're using folke/lazy.nvim.
 return {
     {
-        "Exafunction/codeium.vim",
+        "Exafunction/windsurf.vim",
         config = function()
             vim.keymap.set("i", "<C-g>", function()
                 return vim.fn["codeium#Accept"]()

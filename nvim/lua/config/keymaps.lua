@@ -34,7 +34,7 @@ end, { desc = "Send semantic unit to REPL" })
 vim.keymap.set("v", "<localleader>w", function()
     require("nvim-python-repl").send_visual_to_repl()
 end, { desc = "Send visual selection to REPL" })
-vim.keymap.set("n", "<localleader>vs", function()
+vim.keymap.set("n", "<localleader>vv", function()
     require("nvim-python-repl").toggle_vertical()
 end, { desc = "Create REPL in vertical or horizontal split" })
 
