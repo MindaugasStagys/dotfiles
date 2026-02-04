@@ -36,6 +36,7 @@ brew install ack
 brew install ruby
 brew install npm
 brew install ripgrep
+brew install opencode
 gem install colorls
 
 brew install --cask kitty
@@ -70,6 +71,8 @@ cp .skhdrc ~/.skhdrc
 cp .lintr ~/.lintr
 cp -r sketchybar ~/.config/sketchybar
 cp mocha.conf ~/.config/kitty/mocha.conf
+mkdir -p ~/.config/opencode/themes
+cp Catppuccin_nobg.json ~/.config/opencode/themes
 
 curl https://bootstrap.pypa.io/get-pip.py >get-pip.py
 sudo python3 get-pip.py

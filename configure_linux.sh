@@ -116,3 +116,8 @@ sudo apt-get install ruby-full
 
 # colorls
 sudo gem install colorls
+
+# opencode
+curl -fsSL https://opencode.ai/install | bash
+mkdir -p ~/.config/opencode/themes
+cp Catppuccin_nobg.json ~/.config/opencode/themes
