@@ -121,3 +121,6 @@ sudo gem install colorls
 curl -fsSL https://opencode.ai/install | bash
 mkdir -p ~/.config/opencode/themes
 cp Catppuccin_nobg.json ~/.config/opencode/themes
+
+# venv
+sudo apt install python3.12-venv
