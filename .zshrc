@@ -9,6 +9,7 @@ export PATH=$HOME/bin:$HOME/openssl/bin:/opt/nvim-linux64/bin:$PATH
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/postgresql@15/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/postgresql@15/include"
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="yyyy/mm/dd"
